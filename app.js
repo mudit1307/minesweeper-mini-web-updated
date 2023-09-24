@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded',() =>
 {
     const grid=document.querySelector(".grid");
+    const flagCount=document.querySelector("#flags-left");
     let width=10;
     let bombAmount=20;
     let squares=[];
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded',() =>
                 square.classList.add("flag");
                 square.innerHTML=' 🚩';
                 flags++;
+                flagCount.innerHTML=bombAmount-flags;
                 checkForWin()
             }
             else
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded',() =>
                 square.classList.remove("flag");
                 square.innerHTML=' ';
                 flags--;
+                flagCount.innerHTML=bombAmount-flags;
             }
         }
     }
